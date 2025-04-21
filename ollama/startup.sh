@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 
-# Pull the model you want at startup
-ollama pull zephyr:latest
-ollama pull mxbai-embed-large
+echo "Pulling models..."
+ollama pull zephyr:latest || echo "Failed to pull zephyr model"
+ollama pull mxbai-embed-large || echo "Failed to pull embedding model"
 
-# Start the Ollama server
+echo "Starting Ollama server..."
 exec ollama serve
