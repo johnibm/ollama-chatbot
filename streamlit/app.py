@@ -32,12 +32,16 @@ st.set_page_config(page_title="MUN Chatbot 🤖", page_icon="🤖", layout="cent
 
 # Display custom logo image
 logo = Image.open('./images/MUN_Logo_CMYK_color.jpg')  # Open image file
-logo = logo.resize((210, 125)) 
+logo = logo.resize((105, 62)) 
 #st.image(logo, width=None)  # Display the image with default width
 st.image(logo) 
 
 st.title("MUN Chatbot 🤖")
-st.subheader("Everything you want to know about Memorial University of Newfoundland")
+#st.subheader("Everything you want to know about Memorial University of Newfoundland")
+st.markdown(
+    '<h3 style="white-space: nowrap;">Everything you want to know about Memorial University of Newfoundland</h3>',
+    unsafe_allow_html=True
+)
 
 with st.sidebar.expander("Settings"):
     system_prompt = st.text_area('System Prompt', value=system_prompt, height=256)
