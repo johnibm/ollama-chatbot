@@ -36,6 +36,7 @@ spec:
       initContainers:
         - name: model-init
           image: quay.io/johnibm/ollama:v1
+          imagePullPolicy: Always
           command: ["/bin/bash", "-c"]
           args:
             - |
