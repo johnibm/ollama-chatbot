@@ -32,7 +32,7 @@ st.set_page_config(page_title="MUN Chatbot 🤖", page_icon="🤖", layout="cent
 
 # Display custom logo image
 logo = Image.open('./images/MUN_Logo_CMYK_color.jpg')  # Open image file
-logo = logo.resize((420, 250)) 
+logo = logo.resize((210, 125)) 
 #st.image(logo, width=None)  # Display the image with default width
 st.image(logo) 
 
