@@ -1,15 +1,11 @@
-# ollama-streamlit
+# ollama-chatbot
 
 
-## Intructions
-
-## Openshift
+## Intructions for Openshift
 ### Create Project
-oc new-project ollama-streamlit
+oc new-project ollama-chatbot
 
 ### Create Ollama Deployment
-oc apply -f deployments/ollama.yaml
-#### Or with GPU support
 oc apply -f deployments/ollama-gpu.yaml
 
 ### Create Chatbot Deployment
