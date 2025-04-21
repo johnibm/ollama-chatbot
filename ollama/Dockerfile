@@ -9,8 +9,8 @@ RUN chgrp -R 0 . && chmod -R g+rwX .
 # Add startup script
 COPY startup.sh /startup.sh
 
-# Ensure the current directory is executable and writable by the root group
-RUN chown 0:0 . && chmod g+rx .
+# Ensure the /.ollama directory is executable and writable by the root group
+RUN chown 0:0 /.ollama && chmod g+rx /.ollama
 
 # Ensure the script is executable and writable by the root group
 RUN chown 0:0 /startup.sh && chmod g+rx /startup.sh
