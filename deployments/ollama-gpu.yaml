@@ -38,7 +38,7 @@ spec:
         - serve
         env:
         - name: OLLAMA_PORT
-          value: 11434
+          value: "11434"
         image: quay.io/johnibm/ollama:v1
         imagePullPolicy: Always
         resources:
