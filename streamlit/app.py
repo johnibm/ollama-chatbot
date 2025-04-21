@@ -31,7 +31,8 @@ st.subheader("Everything you want to know about Memorial University of Newfoundl
 
 with st.sidebar.expander("Settings"):
     system_prompt = st.text_area('System Prompt', value=system_prompt, height=256)
-    my_llm = st.text_area('Model', value=my_llm)
+    #my_llm = st.text_area('Model', value=my_llm)
+    my_llm = st.selectbox("Model", options=["llama3:8b", "gemma:2b", "mistral:7b-instruct-v0.3-q8_0", "zephyr"], index=0)
 
 if "messages" not in st.session_state.keys():  # Initialize the chat message history
     st.session_state.messages = [
