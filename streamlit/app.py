@@ -1,6 +1,8 @@
 # https://blog.streamlit.io/build-a-chatbot-with-custom-data-sources-powered-by-llamaindex/
 import os
 import streamlit as st
+from PIL import Image
+
 
 from llama_index.core import ServiceContext, Document, SimpleDirectoryReader, VectorStoreIndex, Settings
 from llama_index.llms.ollama import Ollama
@@ -27,7 +29,11 @@ system_prompt = \
     "Output markdown and always try to cite your source document. "
 
 st.set_page_config(page_title="MUN Chatbot 🤖", page_icon="🤖", layout="centered", initial_sidebar_state="collapsed", menu_items=None)
-st.logo(image, *, size="medium", link=None, icon_image=./images/mun.jpg)
+
+# Display custom logo image
+logo = Image.open('./images/mun.jpg')  # Open image file
+st.image(logo, width=200)  # Display the image with a specified width
+
 st.title("MUN Chatbot 🤖")
 st.subheader("Everything you want to know about Memorial University of Newfoundland")
 
