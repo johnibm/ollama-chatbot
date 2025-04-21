@@ -37,9 +37,9 @@ logo = logo.resize((105, 62))
 st.image(logo) 
 
 st.title("MUN Chatbot 🤖")
-#st.subheader("Everything you want to know about Memorial University of Newfoundland")
+#st.subheader("Everything you want to know about the Memorial University of Newfoundland")
 st.markdown(
-    '<h3 style="white-space: nowrap;">Everything you want to know about Memorial University of Newfoundland</h3>',
+    '<h4 style="white-space: nowrap;">Everything you want to know about the Memorial University of Newfoundland</h4>',
     unsafe_allow_html=True
 )
 
