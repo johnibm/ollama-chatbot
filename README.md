@@ -3,7 +3,7 @@
 
 ## Intructions for Openshift
 ### Create Project
-oc new-project ollama-chatbot
+oc new-project demo-ollama-chatbot
 
 ### Create Ollama Deployment
 oc apply -f deployments/ollama-gpu.yaml
