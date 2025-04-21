@@ -33,6 +33,43 @@ spec:
       labels:
         app: ollama
     spec:      
+      initContainers:
+        - name: model-init
+          image: quay.io/johnibm/ollama:v1
+          command: ["/bin/bash", "-c"]
+          args:
+            - |
+              set -e
+
+              # Start Ollama in the background
+              ollama serve &
+              OLLAMA_PID=$!
+
+              # Wait for Ollama to be ready
+              echo "Waiting for Ollama server to be ready..."
+              until curl -s http://localhost:11434/api/tags > /dev/null; do
+                sleep 1
+              done
+              echo "Ollama server is ready."
+
+              # Pull the models
+              echo "Pulling models..."
+              ollama pull zephyr:latest || echo "Failed to pull zephyr model"
+              ollama pull mxbai-embed-large || echo "Failed to pull embedding model"
+
+              # Wait for both models to be available
+              echo "Waiting for models to be ready..."
+              until ollama list | grep -q "zephyr:latest" && ollama list | grep -q "mxbai-embed-large"; do
+                sleep 2
+              done
+
+              echo "All models are ready. Ollama is now serving."
+              wait $OLLAMA_PID
+
+          volumeMounts:
+            - name: ollama-data
+              mountPath: /.ollama
+
       containers:
       - args:
         - serve
