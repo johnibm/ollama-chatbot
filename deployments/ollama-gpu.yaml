@@ -38,8 +38,8 @@ spec:
         - serve
         env:
         - name: OLLAMA_PORT
-          value: PORTNUM
-        image: docker.io/ollama/ollama:latest
+          value: 11434
+        image: quay.io/johnibm/ollama:v1
         imagePullPolicy: Always
         resources:
           requests:
