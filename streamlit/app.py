@@ -31,8 +31,8 @@ system_prompt = \
 st.set_page_config(page_title="MUN Chatbot 🤖", page_icon="🤖", layout="centered", initial_sidebar_state="collapsed", menu_items=None)
 
 # Display custom logo image
-logo = Image.open('./images/mun.jpg')  # Open image file
-st.image(logo, width=200)  # Display the image with a specified width
+logo = Image.open('./images/MUN_Logo_CMYK_color.jpg')  # Open image file
+st.image(logo, width=None)  # Display the image with default width
 
 st.title("MUN Chatbot 🤖")
 st.subheader("Everything you want to know about Memorial University of Newfoundland")
