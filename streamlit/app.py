@@ -1,3 +1,4 @@
+# https://blog.streamlit.io/build-a-chatbot-with-custom-data-sources-powered-by-llamaindex/
 import os
 import streamlit as st
 
@@ -20,13 +21,14 @@ ollama_embedding = OllamaEmbedding(
 )
 
 system_prompt = \
-    "You are Chatbot, an expert on Memorial University of Newfoundland, located in St John's, Newfoundland, Canada. Your job is to answer questions about Memorial University and Newfoundland." \
-    "Assume that all questions are related to Memorial Universty and/or the province of Newfoundland in Canada." \
-    "Keep your answers to a few sentences and based on context - do not hallucinate facts." \
-    "Output markdown and always try to cite your source document."
+    "You are Chatbot, an expert on Memorial University of Newfoundland, located in St John's, Newfoundland, Canada. Your job is to answer questions about Memorial University and Newfoundland. " \
+    "Assume that all questions are related to Memorial Universty and/or the province of Newfoundland in Canada. " \
+    "Keep your answers to a few sentences and based on context - do not hallucinate facts. " \
+    "Output markdown and always try to cite your source document. "
 
-st.set_page_config(page_title="MUN Chatbot 🐧🤖", page_icon="🤖", layout="centered", initial_sidebar_state="collapsed", menu_items=None)
-st.title("MUN Chatbot 🐧🤖")
+st.set_page_config(page_title="MUN Chatbot 🤖", page_icon="🤖", layout="centered", initial_sidebar_state="collapsed", menu_items=None)
+st.logo(image, *, size="medium", link=None, icon_image=./images/mun.jpg)
+st.title("MUN Chatbot 🤖")
 st.subheader("Everything you want to know about Memorial University of Newfoundland")
 
 with st.sidebar.expander("Settings"):
