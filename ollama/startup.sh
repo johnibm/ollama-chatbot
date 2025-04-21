@@ -24,5 +24,8 @@ done
 
 echo "All models are ready. Ollama is now serving."
 
-# Wait for Ollama to finish serving
-wait $OLLAMA_PID
+# Kill the Ollama process to allow the init container to exit
+kill $OLLAMA_PID
+
+# Ensure that the container exits after initializing
+exit 0
