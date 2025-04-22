@@ -4,6 +4,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: ollama-data
 spec:
+  storageClassName: "gdp-fusion101"
   accessModes:
     - ReadWriteOnce
   resources:

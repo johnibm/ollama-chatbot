@@ -67,6 +67,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: chatbot-data
 spec:
+  storageClassName: "gdp-fusion101"
   accessModes:
     - ReadWriteOnce
   resources:
