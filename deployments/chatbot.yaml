@@ -46,7 +46,7 @@ spec:
         volumeMounts:
         - mountPath: /dev/shm
           name: shm
-        - mountPath: /data
+        - mountPath: /opt/app-root/src/scale
           name: chatbot-data
       dnsPolicy: ClusterFirst
       restartPolicy: Always
